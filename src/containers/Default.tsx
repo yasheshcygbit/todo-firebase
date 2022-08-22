@@ -1,4 +1,3 @@
-import React from 'react';
 import AuthCheck from './AuthCheck';
 function Default() {
 

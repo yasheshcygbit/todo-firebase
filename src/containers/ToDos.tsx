@@ -1,22 +1,13 @@
-import { getAuth, onAuthStateChanged, signOut, User } from 'firebase/auth';
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
-import { PaperClipIcon } from '@heroicons/react/solid'
-import { signInWithGoogle, updateUserProfile, createToDo, getAllTodos, updateToDo } from '../firebase';
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { createToDo, getAllTodos, updateToDo } from '../firebase';
 import AddToDo from '../components/modals/AddTodo';
-
-import { Fragment, useRef } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationIcon } from '@heroicons/react/outline'
 import { QueryDocumentSnapshot } from 'firebase/firestore';
 
 function UserDetails() {
   const [open, setOpen] = useState(false)
   const [toDos, setToDos] = useState<QueryDocumentSnapshot[]>([]);
-  const cancelButtonRef = useRef(null)
   const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [editMode, setEditMode] = useState<boolean>(false);
-  const [fullName, setFullName] = useState<string | null>(null);
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {

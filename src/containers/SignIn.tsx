@@ -1,12 +1,10 @@
-import { getAuth, onAuthStateChanged, signOut, User } from 'firebase/auth';
-import { BrowserRouter, Routes, Route, Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LockClosedIcon } from '@heroicons/react/solid'
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../App.css';
 import { loginUserWithEmail, signInWithGoogle } from '../firebase';
 import { FirebaseError } from 'firebase/app';
 import TitleInput from '../components/TitleInput';
-const auth = getAuth();
 function SignIn() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -36,14 +34,6 @@ function SignIn() {
   };
 
   return (
-    // <div className="App">
-    //   <div>
-    //     <h1>Login User</h1>
-    //     <div>
-    //       <button onClick={googleSignIn}>Google Login</button>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>

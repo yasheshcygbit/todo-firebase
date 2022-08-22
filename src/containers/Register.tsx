@@ -1,4 +1,3 @@
-import { getAuth } from 'firebase/auth';
 import { Link } from "react-router-dom";
 import { LockClosedIcon } from '@heroicons/react/solid'
 import { useState } from 'react';
@@ -6,7 +5,6 @@ import '../App.css';
 import { createUserWithEmail, signInWithGoogle } from '../firebase';
 import { FirebaseError } from 'firebase/app';
 import TitleInput from '../components/TitleInput';
-const auth = getAuth();
 function Register() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');

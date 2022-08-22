@@ -1,6 +1,6 @@
-import { getAuth, onAuthStateChanged, signOut, User } from 'firebase/auth';
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import { getAuth } from 'firebase/auth';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
 import './App.css';
 import UserDetails from './containers/UserDetails';
 import ToDos from './containers/ToDos';
@@ -9,7 +9,6 @@ import SignIn from './containers/SignIn';
 import Register from './containers/Register';
 import DefaultLayout from './layouts/DefaultLayout';
 import Default from './containers/Default';
-const auth = getAuth();
 function App() {
   return (
     <BrowserRouter>

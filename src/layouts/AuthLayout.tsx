@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import AuthHeader from "../components/AuthHeader";
 import AuthCheck from "../containers/AuthCheck";
 

@@ -1,8 +1,6 @@
-import { getAuth, onAuthStateChanged, signOut, User } from 'firebase/auth';
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
-import { PaperClipIcon } from '@heroicons/react/solid'
-import { signInWithGoogle, updateUserProfile } from '../firebase';
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { updateUserProfile } from '../firebase';
 function UserDetails() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [editMode, setEditMode] = useState<boolean>(false);

@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import DashboardHeader from "../components/DashboardHeader";
 import AuthCheck from "../containers/AuthCheck";
 
