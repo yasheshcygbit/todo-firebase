@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useNavigate, Navigate, useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 interface AuthCheckProps {
